@@ -1,6 +1,8 @@
 package hhj.demo.springboot.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -20,8 +22,15 @@ public class DemoServiceImpl implements DemoService {
 	@Resource
 	private DemoDAO demoDAO;
 
-	public List<Demo> getList() {
-		return demoDAO.selectAll();
+	public List<Demo> getList(Integer start, Integer length) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("start", start);
+		map.put("length", length);
+		return demoDAO.selectByLength(map);
+	}
+
+	public int add(Demo record) {
+		return demoDAO.insertSelective(record);
 	}
 
 }

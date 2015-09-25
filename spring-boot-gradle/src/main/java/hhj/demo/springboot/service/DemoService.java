@@ -9,5 +9,7 @@ import hhj.demo.springboot.bean.Demo;
  *
  */
 public interface DemoService {
-	List<Demo> getList();
+	List<Demo> getList(Integer start, Integer length);
+	
+	int add(Demo record);
 }

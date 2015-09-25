@@ -1,0 +1,5 @@
+/spring-boot-gradle/bin
+/spring-boot-gradle/.gradle
+/spring-boot-gradle/.settings
+/spring-boot-gradle/.classpath
+/spring-boot-gradle/.project
